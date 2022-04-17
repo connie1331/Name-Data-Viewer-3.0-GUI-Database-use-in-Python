@@ -1,0 +1,52 @@
+# Author:           Khanh Vu
+# Lab:              Lab_9: UI & Database use in Python
+# Date:             03.04.2022, 03.07.2022, 03.10.2022, 03.11.2022
+# Sources:          Prof. Marc Goodman's Youtube Channel - 133Y IMDB browser Program
+#                   Murach's Python Programming - Beginner... Chapter 14_ How to define and use your own classes
+#                   Murach's Python Programming - Beginner... Chapter 16_ Database
+#                   CIS-133Y- Python Programming I Lecture Notes - Module 6: OOP
+#                   CIS-133Y- Python Programming I Lecture Notes - Module 7: Database Development
+#                   Lab 9 specification
+
+# Description:
+
+    1. The Name DataBrowser browser is the continuance of the Name Data Viewer program. The Name Data Browser presents a
+user interface where a user is able to enter a name and a gender.
+After entering the criteria, user is able to view yearly data on how popular that name was on a year-by-year basis in
+a scrollable table.
+
+    2. The Name class and the Gender class are stored in a module named Name (Name.py). This code use object(s) from the
+    Database class to define the static methods in the Name and the Gender classes.
+
+    Name class: The constructor for the Name class that stores values for name, year, gender, and count for the object.
+This code also has setters and getters for the 4 properties above. Then,it defines a static method called readName()
+which call Database.readName() and return its results.
+    Gender class: The constructor for the Name class that stores gender values for the object.
+This code also has setters and getters for the 4 properties above. Then,it defines a static method called readGender()
+which call Database.readGender() and return its results.
+
+    3. The Database class is stored in a module named Database (Database.py). This code defines three class method
+called readNames(), readGender and connect().
+        - The method connect() makes a connection to the NAMES database.
+        - The readNames() fetch name data from the Database based on filtered criteria. This method calls cls.connect()
+        and takes two parameters: gender, and year which are used to filter the results. It contains the SQL query where
+        the  two parameters are passed to the WHERE clause(use parameter binding. When called, the method return a list
+        of Name objects that match the criteria.
+        - The readGen() has the similar function as the readNam(). Then called, the method return a list of all genders
+        (objects) that the Database stores.
+
+    4. The main (main.py) contains the main code of the program. This code includes the UI where user
+can select gender and enter a name.This code imports the Name class from the Name module. The user inputs are used
+as the search parameter and use the readNames() method from Name module to fetch the matching Name objects.
+
+   The program need to validate user inputs. Gender should be restricted to M or F, Year should be a whole number
+   between 1915 and 2014, Name should be non-empty, and NameCount should be a whole number between 5 and 200,000.
+
+    Example:
+
+    	Name	Year	Gender	NameCount	Total
+1	    Marc	1915	M	    13	        848603
+2	    Marc	1916	M	    14	        890099
+3	    Marc	1917	M	    9	        925511
+4	    Marc	1918	M	    18	        1013537
+5	    Marc	1919	M	    17	        980149

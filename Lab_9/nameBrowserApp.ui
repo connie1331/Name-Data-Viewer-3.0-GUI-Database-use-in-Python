@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="ttk.Frame" id="topFrame">
+    <property name="height">200</property>
+    <property name="width">1000</property>
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="row">0</property>
+      <property name="sticky">nsew</property>
+    </layout>
+    <containerlayout manager="grid">
+      <property id="0" name="weight" type="col">1</property>
+      <property id="1" name="weight" type="row">1</property>
+    </containerlayout>
+    <child>
+      <object class="ttk.Frame" id="controlFrame">
+        <property name="height">200</property>
+        <property name="padding">0 0 600 0</property>
+        <property name="width">1000</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="row">0</property>
+          <property name="sticky">w</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="nameLabel">
+            <property name="text" translatable="yes">Name:</property>
+            <property name="width">7</property>
+            <bind add="" handler="" sequence="" />
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="nameEntry">
+            <property name="font">TkDefaultFont</property>
+            <property name="justify">left</property>
+            <property name="text" translatable="yes">John</property>
+            <property name="width">20</property>
+            <bind add="" handler="nameEntered" sequence="&lt;KeyRelease&gt;" />
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="genderLabel">
+            <property name="text" translatable="yes">Gender: </property>
+            <property name="width">8</property>
+            <bind add="" handler="I Khanh's note: I accidently created this binding. I tried to delete it from Pygubu Designer but it doesn't change the setting. I don't know how to fix it!" sequence="&lt;1&gt;" />
+            <layout manager="grid">
+              <property name="column">2</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Combobox" id="genderCombo">
+            <property name="state">readonly</property>
+            <property name="width">8</property>
+            <bind add="" handler="genderSelected" sequence="&lt;&lt;ComboboxSelected&gt;&gt;" />
+            <layout manager="grid">
+              <property name="column">3</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="pygubu.builder.widgets.scrollbarhelper" id="scrollbarhelper2">
+        <property name="height">25</property>
+        <property name="padding">5 5 5 5</property>
+        <property name="scrolltype">both</property>
+        <property name="usemousewheel">false</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">1</property>
+          <property name="sticky">nsew</property>
+        </layout>
+        <child>
+          <object class="ttk.Treeview" id="nameTree">
+            <property name="height">25</property>
+            <property name="selectmode">browse</property>
+            <property name="show">headings</property>
+            <bind add="" handler="" sequence="" />
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">nsew</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
