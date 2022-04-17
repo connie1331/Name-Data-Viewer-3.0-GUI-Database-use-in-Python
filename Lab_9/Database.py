@@ -27,10 +27,10 @@ class Database:
     @classmethod
     def connect(cls):
         if cls.__connection is None:
-            server = 'tcp:cisdbss.pcc.edu'
+            server = 'xxx'
             database = 'NAMES'
-            username = '275student'
-            password = '275student'
+            username = 'xxx'
+            password = 'xxx'
             cls.__connection = pyodbc.connect(                'DRIVER={SQL Server};SERVER=' + server
                 + ';DATABASE=' + database
                 + ';UID=' + username + ';PWD=' + password
